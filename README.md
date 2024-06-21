@@ -43,7 +43,8 @@ All examples shown are just for understanding.
 
 #### python
 
-Demo of the middleware playing a role of proxy between frontend and backend service
+- `middleware` playing a proxy between frontend and backend service
+- `imap` wrapper
 
 #### typescript
 
