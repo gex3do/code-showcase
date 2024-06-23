@@ -39,19 +39,19 @@ All examples shown are just for understanding.
 #### golang
 
 - `http` client with possibility to configure: `metrics`, `traces` and `retries`.
-- `pool` implementation based on channels and with possibility to set pool capacity
+- `pool` implementation based on channels and with possibility to set pool capacity.
 
 #### python
 
-- `middleware` playing a proxy between frontend and backend service
-- `imap` wrapper
+- `middleware` playing a proxy role between frontend and backend service.
+- `imap` wrapper. IMAP stands for Internet Message Access Protocol. It is an application layer protocol used to receive the emails from the mail server.
 
 #### typescript
 
-Code snippets demonstrates some components, routes and socket implementation 
+Code snippets demonstrates some components, routes and socket implementation.
 
 ## Interested in further details?
 
-Feel free to [contact us][1]
+Feel free to [contact us][1].
 
 [1]: sagoyan@gmail.com
