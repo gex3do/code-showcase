@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.2 - not yet released
+
+- Remove `http-client` from `pkg`
+
 ## 0.1.1 - 2024-06-25
 
 - Add `Makefile`, `VERSION` and `.gitignore` files
