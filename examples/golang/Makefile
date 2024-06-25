@@ -1,0 +1,61 @@
+VERSION = $(shell cat VERSION)
+MODULE = $(shell go list)
+GOOS = $(shell go env GOOS)
+GOARCH = $(shell go env GOARCH)
+SUBPATH = $(GOOS)/$(GOARCH)
+
+GOENV = GOSUMDB=off GO111MODULE=on GOFLAGS=-mod=vendor CGO_ENABLED=0
+GO = $(GOENV) go
+
+BINNAME = myexample
+BUILDBASE = build
+BUILDDIR = $(BUILDBASE)/$(SUBPATH)
+
+PKGBASE = main
+
+BIN = $(BUILDDIR)/$(BINNAME)
+
+TESTFLAGS = -timeout 3m -covermode=atomic -cover -coverprofile=cover.out
+
+PREFIX  = /opt
+DESTDIR = $(PREFIX)/bin
+
+SOURCEDIRS = example pkg
+SOURCES = $(shell find $(SOURCEDIRS) -name '*.go')
+
+.PHONY: all install clean clean-go-cache dep proper
+
+all: $(BINNAME)
+
+test: unittest
+
+unittest:
+	$(GO) test $(TESTFLAGS) -tags unit ./...
+
+install: $(BINNAME)
+	install -D -t $(DESTDIR) $(BINNAME)
+
+proper: clean clean-go-cache
+
+clean-go-cache:
+	$(GO) clean -testcache -modcache
+
+clean:
+	rm -f $(BINNAME)
+	rm -rf $(BUILDBASE) $(COVERDIR)
+
+dep:
+	$(GO) mod tidy
+	$(GO) mod vendor
+
+vendor-gofmt:
+	git diff --name-only 'vendor/**.go' | xargs -r gofmt -w
+
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR)
+
+$(BIN): $(BUILDDIR) $(SOURCES) $(PROTOSETS)
+	$(GO) build -o $(BIN) .
+
+$(BINNAME): $(BIN)
+	cp $(BIN) .
