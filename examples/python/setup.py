@@ -8,7 +8,7 @@ setup(
     description=textwrap.dedent(
         """
         This is just an example project
-         """
+        """
     ),
     url="https://myproject.notexisting.com",
     author="Dmitry Sagoyan",
