@@ -38,8 +38,7 @@ All examples shown are just for understanding.
 
 #### golang
 
-- `http` client with possibility to configure: `metrics`, `traces` and `retries`.
-- `pool` implementation based on channels and with possibility to set pool capacity.
+- `pool` implementation based on channels with possibility to set pool capacity.
 
 #### python
 
