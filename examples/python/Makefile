@@ -9,5 +9,6 @@ start-server:
 start-imap:
 	python3 main.py --mode imap
 
-sort:
-	isort .
+check:
+	isort -c **/*.py
+	pylama -o pylama.ini **/*.py

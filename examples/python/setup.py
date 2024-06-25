@@ -1,10 +1,14 @@
 import textwrap
 
+from example import read_file
 from setuptools import find_packages, setup
+
+
+ver = read_file("../VERSION")
 
 setup(
     name="example-project",
-    version="0.1.0",
+    version=ver,
     description=textwrap.dedent(
         """
         This is just an example project
