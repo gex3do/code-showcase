@@ -23,6 +23,17 @@ DESTDIR = $(PREFIX)/bin
 SOURCEDIRS = example pkg
 SOURCES = $(shell find $(SOURCEDIRS) -name '*.go')
 
+IN_DOCKER := docker run --rm \
+		-v `pwd`:/app \
+        -w /app \
+        golangci/golangci-lint:v1.57.2
+
+ifeq (, $(shell which golangci-lint))
+GOLANGCI_LINT := $(IN_DOCKER) golangci-lint
+else
+GOLANGCI_LINT := golangci-lint
+endif
+
 .PHONY: all install clean clean-go-cache dep proper
 
 all: $(BINNAME)
@@ -36,6 +47,9 @@ install: $(BINNAME)
 	install -D -t $(DESTDIR) $(BINNAME)
 
 proper: clean clean-go-cache
+
+check:
+	$(GOLANGCI_LINT) run
 
 clean-go-cache:
 	$(GO) clean -testcache -modcache
