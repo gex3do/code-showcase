@@ -1,15 +1,16 @@
 # Dear Reader
 
-If you are seeing this repository, it means that you have probably already contacted us, or you might be considering doing so.
+If you are seeing this repository, it means that you have probably already contacted me, 
+or you might be considering doing so.
 
 The repository includes code showcases from ongoing and some legacy projects.
 
-In addition to our examples, we want to share the vision of our development team. It's brief.
+In addition to my examples, I want to share the vision of the development process. It's brief.
 
-## Know your Programmer 
+## Know your Programmer
 
-These examples have been written in various programming languages by different developers on our team, at different times. 
-Nonetheless, the responsibility for the results is equally shared among all team members.
+These examples have been written in various programming languages, at different times. 
+Nonetheless, the responsibility for the results is equal.
 
 - Write orthogonal code (fewer dependencies are better).
 - Adhere to the `ETC (Easier To Change)` value.
@@ -19,18 +20,19 @@ Nonetheless, the responsibility for the results is equally shared among all team
 - Always design with contracts (`less is more`).
 - `Think` about your work.
 
-## Why do we emphasize these points?
+## Why do I highlight these points?
 
-We do not pursue perfection at all costs. When `good-enough` software is best, one can cultivate the discipline to 
+I do not pursue perfection at all costs. 
+When `good-enough` software is best, one can cultivate the discipline to 
 produce software that meets this standard.
 
-Our objective: consistently striving for adequacy. Adequacy for users, for future maintainers, and for our own peace of mind.
+My objective: consistently striving for adequacy. 
+Adequacy for users, for future maintainers, and for my own peace of mind.
 
-## Our examples
+## Examples
 
-We've included only code snippets or brief examples to mitigate the risk of breaching our 
-non-disclosure agreements. We've also changed function names, variables, and even comments 
-to avoid any coincidence with the live code.
+I've included only code snippets or brief examples to mitigate the risk of breaching non-disclosure agreements. 
+Function names, variables, and even comments are changed to avoid any coincidence with the live code.
 
 All examples shown are just for understanding.
 
@@ -51,6 +53,6 @@ Code snippets demonstrates some components, routes and socket implementation.
 
 ## Interested in further details?
 
-Feel free to [contact us][1].
+Feel free to [contact me][1].
 
 [1]: sagoyan@gmail.com
